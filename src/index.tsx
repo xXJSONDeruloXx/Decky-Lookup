@@ -11,16 +11,23 @@ import { FaGoogle } from "react-icons/fa";
 function Content() {
   const mainRunningApp = Router.MainRunningApp;
 
+  const handleSearch = () => {
+    if (mainRunningApp) {
+      const searchQuery = encodeURIComponent(mainRunningApp.display_name);
+      window.open(`https://www.google.com/search?q=${searchQuery}`, "_blank");
+    } else {
+      window.open("https://www.google.com", "_blank");
+    }
+  };
+
   return (
     <PanelSection>
       <PanelSectionRow>
         <ButtonItem
           layout="below"
-          onClick={() => {
-            window.open("https://www.google.com", "_blank");
-          }}
+          onClick={handleSearch}
         >
-          Open Google
+          {mainRunningApp ? `Search for ${mainRunningApp.display_name}` : "Open Google"}
         </ButtonItem>
       </PanelSectionRow>
       {mainRunningApp && (
