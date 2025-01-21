@@ -47,6 +47,15 @@ function Content() {
     }
   };
 
+  const handleSDHQSearch = () => {
+    if (mainRunningApp) {
+      const searchQuery = encodeURIComponent(mainRunningApp.display_name);
+      window.open(`https://steamdeckhq.com/?s=${searchQuery}`, "_blank");
+    } else {
+      window.open("https://steamdeckhq.com", "_blank");
+    }
+  };
+
   return (
     <PanelSection>
       <PanelSectionRow>
@@ -81,6 +90,14 @@ function Content() {
           {mainRunningApp ? `Check HLTB for ${mainRunningApp.display_name}` : "Open HowLongToBeat"}
         </ButtonItem>
       </PanelSectionRow>
+      <PanelSectionRow>
+        <ButtonItem
+          layout="below"
+          onClick={handleSDHQSearch}
+        >
+          {mainRunningApp ? `Search SDHQ for ${mainRunningApp.display_name}` : "Open Steam Deck HQ"}
+        </ButtonItem>
+      </PanelSectionRow>
       {mainRunningApp && (
         <PanelSectionRow>
           <div>
@@ -95,9 +112,9 @@ function Content() {
 
 export default definePlugin(() => {
   return {
-    name: "Google Plugin",
+    name: "Decky Lookup",
     content: <Content />,
     icon: <FaGoogle />,
-    titleView: <div className={staticClasses.Title}>Google Plugin</div>,
+    titleView: <div className={staticClasses.Title}>Decky Lookup</div>,
   };
 });
