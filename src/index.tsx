@@ -29,6 +29,14 @@ function Content() {
     }
   };
 
+  const handleProtonDBSearch = () => {
+    if (mainRunningApp) {
+      window.open(`https://www.protondb.com/app/${mainRunningApp.appid}`, "_blank");
+    } else {
+      window.open("https://www.protondb.com", "_blank");
+    }
+  };
+
   return (
     <PanelSection>
       <PanelSectionRow>
@@ -45,6 +53,14 @@ function Content() {
           onClick={handlePCGWSearch}
         >
           {mainRunningApp ? `Search PCGW for ${mainRunningApp.display_name}` : "Open PC Gaming Wiki"}
+        </ButtonItem>
+      </PanelSectionRow>
+      <PanelSectionRow>
+        <ButtonItem
+          layout="below"
+          onClick={handleProtonDBSearch}
+        >
+          {mainRunningApp ? `Check ProtonDB for ${mainRunningApp.display_name}` : "Open ProtonDB"}
         </ButtonItem>
       </PanelSectionRow>
       {mainRunningApp && (
