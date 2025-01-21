@@ -56,6 +56,15 @@ function Content() {
     }
   };
 
+  const handleGameFAQsSearch = () => {
+    if (mainRunningApp) {
+      const searchQuery = encodeURIComponent(mainRunningApp.display_name);
+      window.open(`https://gamefaqs.gamespot.com/search?game=${searchQuery}`, "_blank");
+    } else {
+      window.open("https://gamefaqs.gamespot.com", "_blank");
+    }
+  };
+
   return (
     <PanelSection>
       <PanelSectionRow>
@@ -96,6 +105,14 @@ function Content() {
           onClick={handleSDHQSearch}
         >
           {mainRunningApp ? `Search SDHQ for ${mainRunningApp.display_name}` : "Open Steam Deck HQ"}
+        </ButtonItem>
+      </PanelSectionRow>
+      <PanelSectionRow>
+        <ButtonItem
+          layout="below"
+          onClick={handleGameFAQsSearch}
+        >
+          {mainRunningApp ? `Search GameFAQs for ${mainRunningApp.display_name}` : "Open GameFAQs"}
         </ButtonItem>
       </PanelSectionRow>
       {mainRunningApp && (
