@@ -1,11 +1,11 @@
 {
   "name": "AAAAA",
-  "author": "John Doe",
+  "author": "JSON Derulo",
   "flags": ["debug", "_root"],
   "api_version": 1,
   "publish": {
     "tags": ["template", "root"],
     "description": "Decky example plugin.",
-    "image": "https://opengraph.githubassets.com/1/SteamDeckHomebrew/PluginLoader"
+    "image": "https://steamuserimages-a.akamaihd.net/ugc/25432935041805370/022FA999A2504A9A8324F31D0F90C972A116B0B1/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"
   }
 }

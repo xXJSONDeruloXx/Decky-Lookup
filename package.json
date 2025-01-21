@@ -1,7 +1,7 @@
 {
-  "name": "decky-plugin-template",
+  "name": "Decky-Lookup",
   "version": "0.0.1",
-  "description": "A template to quickly create decky plugins from scratch, based on TypeScript and webpack",
+  "description": "A plugin to quickly access useful sites for the running game",
   "type": "module",
   "scripts": {
     "build": "rollup -c",
