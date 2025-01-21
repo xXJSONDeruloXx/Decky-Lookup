@@ -37,6 +37,16 @@ function Content() {
     }
   };
 
+  const handleHLTBSearch = () => {
+    if (mainRunningApp) {
+      // Double encode the search query as HLTB uses a different encoding pattern
+      const searchQuery = encodeURIComponent(encodeURIComponent(mainRunningApp.display_name));
+      window.open(`https://howlongtobeat.com/?q=${searchQuery}`, "_blank");
+    } else {
+      window.open("https://howlongtobeat.com", "_blank");
+    }
+  };
+
   return (
     <PanelSection>
       <PanelSectionRow>
@@ -61,6 +71,14 @@ function Content() {
           onClick={handleProtonDBSearch}
         >
           {mainRunningApp ? `Check ProtonDB for ${mainRunningApp.display_name}` : "Open ProtonDB"}
+        </ButtonItem>
+      </PanelSectionRow>
+      <PanelSectionRow>
+        <ButtonItem
+          layout="below"
+          onClick={handleHLTBSearch}
+        >
+          {mainRunningApp ? `Check HLTB for ${mainRunningApp.display_name}` : "Open HowLongToBeat"}
         </ButtonItem>
       </PanelSectionRow>
       {mainRunningApp && (
