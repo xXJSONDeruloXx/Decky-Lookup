@@ -11,7 +11,7 @@ import { FaGoogle } from "react-icons/fa";
 function Content() {
   const mainRunningApp = Router.MainRunningApp;
 
-  const handleSearch = () => {
+  const handleGoogleSearch = () => {
     if (mainRunningApp) {
       const searchQuery = encodeURIComponent(mainRunningApp.display_name);
       window.open(`https://www.google.com/search?q=${searchQuery}`, "_blank");
@@ -20,14 +20,31 @@ function Content() {
     }
   };
 
+  const handlePCGWSearch = () => {
+    if (mainRunningApp) {
+      const searchQuery = encodeURIComponent(mainRunningApp.display_name);
+      window.open(`https://www.pcgamingwiki.com/w/index.php?search=${searchQuery}`, "_blank");
+    } else {
+      window.open("https://www.pcgamingwiki.com", "_blank");
+    }
+  };
+
   return (
     <PanelSection>
       <PanelSectionRow>
         <ButtonItem
           layout="below"
-          onClick={handleSearch}
+          onClick={handleGoogleSearch}
         >
           {mainRunningApp ? `Search for ${mainRunningApp.display_name}` : "Open Google"}
+        </ButtonItem>
+      </PanelSectionRow>
+      <PanelSectionRow>
+        <ButtonItem
+          layout="below"
+          onClick={handlePCGWSearch}
+        >
+          {mainRunningApp ? `Search PCGW for ${mainRunningApp.display_name}` : "Open PC Gaming Wiki"}
         </ButtonItem>
       </PanelSectionRow>
       {mainRunningApp && (
