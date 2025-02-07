@@ -11,29 +11,33 @@ import { FaGoogle } from "react-icons/fa";
 function Content() {
   const mainRunningApp = Router.MainRunningApp;
 
+  const navigateToExternalWeb = (url: string) => {
+    window.open(url, '_blank');
+  };
+
   const handleGoogleSearch = () => {
     if (mainRunningApp) {
       const searchQuery = encodeURIComponent(mainRunningApp.display_name);
-      window.open(`https://www.google.com/search?q=${searchQuery}`, "_blank");
+      navigateToExternalWeb(`https://www.google.com/search?q=${searchQuery}`);
     } else {
-      window.open("https://www.google.com", "_blank");
+      navigateToExternalWeb("https://www.google.com");
     }
   };
 
   const handlePCGWSearch = () => {
     if (mainRunningApp) {
       const searchQuery = encodeURIComponent(mainRunningApp.display_name);
-      window.open(`https://www.pcgamingwiki.com/w/index.php?search=${searchQuery}`, "_blank");
+      navigateToExternalWeb(`https://www.pcgamingwiki.com/w/index.php?search=${searchQuery}`);
     } else {
-      window.open("https://www.pcgamingwiki.com", "_blank");
+      navigateToExternalWeb("https://www.pcgamingwiki.com");
     }
   };
 
   const handleProtonDBSearch = () => {
     if (mainRunningApp) {
-      window.open(`https://www.protondb.com/app/${mainRunningApp.appid}`, "_blank");
+      navigateToExternalWeb(`https://www.protondb.com/app/${mainRunningApp.appid}`);
     } else {
-      window.open("https://www.protondb.com", "_blank");
+      navigateToExternalWeb("https://www.protondb.com");
     }
   };
 
@@ -41,27 +45,27 @@ function Content() {
     if (mainRunningApp) {
       // Double encode the search query as HLTB uses a different encoding pattern
       const searchQuery = encodeURIComponent(encodeURIComponent(mainRunningApp.display_name));
-      window.open(`https://howlongtobeat.com/?q=${searchQuery}`, "_blank");
+      navigateToExternalWeb(`https://howlongtobeat.com/?q=${searchQuery}`);
     } else {
-      window.open("https://howlongtobeat.com", "_blank");
+      navigateToExternalWeb("https://howlongtobeat.com");
     }
   };
 
   const handleSDHQSearch = () => {
     if (mainRunningApp) {
       const searchQuery = encodeURIComponent(mainRunningApp.display_name);
-      window.open(`https://steamdeckhq.com/?s=${searchQuery}`, "_blank");
+      navigateToExternalWeb(`https://steamdeckhq.com/?s=${searchQuery}`);
     } else {
-      window.open("https://steamdeckhq.com", "_blank");
+      navigateToExternalWeb("https://steamdeckhq.com");
     }
   };
 
   const handleGameFAQsSearch = () => {
     if (mainRunningApp) {
       const searchQuery = encodeURIComponent(mainRunningApp.display_name);
-      window.open(`https://gamefaqs.gamespot.com/search?game=${searchQuery}`, "_blank");
+      navigateToExternalWeb(`https://gamefaqs.gamespot.com/search?game=${searchQuery}`);
     } else {
-      window.open("https://gamefaqs.gamespot.com", "_blank");
+      navigateToExternalWeb("https://gamefaqs.gamespot.com");
     }
   };
 
