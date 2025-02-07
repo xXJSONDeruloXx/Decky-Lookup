@@ -1,7 +1,3 @@
-Collecting workspace information
-
-Here's a README explaining the features of the Decky Lookup plugin:
-
 # Decky Lookup
 
 A [Decky](https://github.com/SteamDeckHomebrew/decky-loader) plugin that provides quick access to useful websites for your currently running Steam game.
