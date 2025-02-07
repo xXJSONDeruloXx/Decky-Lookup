@@ -11,33 +11,29 @@ import { FaGoogle } from "react-icons/fa";
 function Content() {
   const mainRunningApp = Router.MainRunningApp;
 
-  const navigateToExternalWeb = (url: string) => {
-    window.open(url, '_blank');
-  };
-
   const handleGoogleSearch = () => {
     if (mainRunningApp) {
       const searchQuery = encodeURIComponent(mainRunningApp.display_name);
-      navigateToExternalWeb(`https://www.google.com/search?q=${searchQuery}`);
+      window.open(`https://www.google.com/search?q=${searchQuery}`, "_blank");
     } else {
-      navigateToExternalWeb("https://www.google.com");
+      window.open("https://www.google.com", "_blank");
     }
   };
 
   const handlePCGWSearch = () => {
     if (mainRunningApp) {
       const searchQuery = encodeURIComponent(mainRunningApp.display_name);
-      navigateToExternalWeb(`https://www.pcgamingwiki.com/w/index.php?search=${searchQuery}`);
+      window.open(`https://www.pcgamingwiki.com/w/index.php?search=${searchQuery}`, "_blank");
     } else {
-      navigateToExternalWeb("https://www.pcgamingwiki.com");
+      window.open("https://www.pcgamingwiki.com", "_blank");
     }
   };
 
   const handleProtonDBSearch = () => {
     if (mainRunningApp) {
-      navigateToExternalWeb(`https://www.protondb.com/app/${mainRunningApp.appid}`);
+      window.open(`https://www.protondb.com/app/${mainRunningApp.appid}`, "_blank");
     } else {
-      navigateToExternalWeb("https://www.protondb.com");
+      window.open("https://www.protondb.com", "_blank");
     }
   };
 
@@ -45,27 +41,27 @@ function Content() {
     if (mainRunningApp) {
       // Double encode the search query as HLTB uses a different encoding pattern
       const searchQuery = encodeURIComponent(encodeURIComponent(mainRunningApp.display_name));
-      navigateToExternalWeb(`https://howlongtobeat.com/?q=${searchQuery}`);
+      window.open(`https://howlongtobeat.com/?q=${searchQuery}`, "_blank");
     } else {
-      navigateToExternalWeb("https://howlongtobeat.com");
+      window.open("https://howlongtobeat.com", "_blank");
     }
   };
 
   const handleSDHQSearch = () => {
     if (mainRunningApp) {
       const searchQuery = encodeURIComponent(mainRunningApp.display_name);
-      navigateToExternalWeb(`https://steamdeckhq.com/?s=${searchQuery}`);
+      window.open(`https://steamdeckhq.com/?s=${searchQuery}`, "_blank");
     } else {
-      navigateToExternalWeb("https://steamdeckhq.com");
+      window.open("https://steamdeckhq.com", "_blank");
     }
   };
 
   const handleGameFAQsSearch = () => {
     if (mainRunningApp) {
       const searchQuery = encodeURIComponent(mainRunningApp.display_name);
-      navigateToExternalWeb(`https://gamefaqs.gamespot.com/search?game=${searchQuery}`);
+      window.open(`https://gamefaqs.gamespot.com/search?game=${searchQuery}`, "_blank");
     } else {
-      navigateToExternalWeb("https://gamefaqs.gamespot.com");
+      window.open("https://gamefaqs.gamespot.com", "_blank");
     }
   };
 
@@ -76,7 +72,7 @@ function Content() {
           layout="below"
           onClick={handleGoogleSearch}
         >
-          {mainRunningApp ? `Search for ${mainRunningApp.display_name}` : "Open Google"}
+          {mainRunningApp ? `Google ${mainRunningApp.display_name}` : "Open Google"}
         </ButtonItem>
       </PanelSectionRow>
       <PanelSectionRow>
@@ -100,7 +96,7 @@ function Content() {
           layout="below"
           onClick={handleHLTBSearch}
         >
-          {mainRunningApp ? `Check HLTB for ${mainRunningApp.display_name}` : "Open HowLongToBeat"}
+          {mainRunningApp ? `Search HLTB for ${mainRunningApp.display_name}` : "Open HowLongToBeat"}
         </ButtonItem>
       </PanelSectionRow>
       <PanelSectionRow>
@@ -119,14 +115,14 @@ function Content() {
           {mainRunningApp ? `Search GameFAQs for ${mainRunningApp.display_name}` : "Open GameFAQs"}
         </ButtonItem>
       </PanelSectionRow>
-      {mainRunningApp && (
+      {/* {mainRunningApp && (
         <PanelSectionRow>
           <div>
             <p>Currently running app ID: {mainRunningApp.appid}</p>
             <p>Currently running app name: {mainRunningApp.display_name}</p>
           </div>
         </PanelSectionRow>
-      )}
+      )} */}
     </PanelSection>
   );
 }
