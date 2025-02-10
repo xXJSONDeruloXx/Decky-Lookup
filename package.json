@@ -1,6 +1,6 @@
 {
-  "name": "Decky-Lookup",
-  "version": "0.0.1",
+  "name": "decky-lookup",
+  "version": "0.1.0",
   "description": "A plugin to quickly access useful sites for the running game",
   "type": "module",
   "scripts": {
@@ -10,21 +10,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SteamDeckHomebrew/decky-plugin-template.git"
+    "url": "git+https://github.com/xXJSONDeruloXx/Decky-Lookup.git"
   },
   "keywords": [
-    "decky",
-    "plugin",
-    "plugin-template",
-    "steam-deck",
-    "deck"
+    "lookup",
+    "website",
+    "search",
+    "alt-tab",
+    "browser"
   ],
-  "author": "You <you@you.tld>",
+  "author": "no@thankyou.com",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/SteamDeckHomebrew/decky-plugin-template/issues"
+    "url": "https://github.com/xXJSONDeruloXx/Decky-Lookup/issues"
   },
-  "homepage": "https://github.com/SteamDeckHomebrew/decky-plugin-template#readme",
+  "homepage": "https://github.com/xXJSONDeruloXx/Decky-Lookup#readme",
   "devDependencies": {
     "@decky/rollup": "^1.0.1",
     "@decky/ui": "^4.7.2",
