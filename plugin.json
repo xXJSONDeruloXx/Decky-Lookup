@@ -5,7 +5,7 @@
   "api_version": 1,
   "publish": {
     "tags": ["Lookup", "website", "search", "browser"],
-    "description": "Decky example plugin.",
+    "description": "A plugin to quickly access useful sites for the running game.",
     "image": "https://steamuserimages-a.akamaihd.net/ugc/25432935041805370/022FA999A2504A9A8324F31D0F90C972A116B0B1/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"
   }
 }
