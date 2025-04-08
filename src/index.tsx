@@ -65,6 +65,15 @@ function Content() {
     }
   };
 
+  const handleAWACYSearch = () => {
+    if (mainRunningApp) {
+      const searchQuery = encodeURIComponent(mainRunningApp.display_name);
+      window.open(`https://areweanticheatyet.com/?search=${searchQuery}&sortOrder=&sortBy=`, "_blank");
+    } else {
+      window.open("https://areweanticheatyet.com", "_blank");
+    }
+  };
+
   return (
     <PanelSection>
       <PanelSectionRow>
@@ -113,6 +122,14 @@ function Content() {
           onClick={handleGameFAQsSearch}
         >
           {mainRunningApp ? `Search GameFAQs for ${mainRunningApp.display_name}` : "Open GameFAQs"}
+        </ButtonItem>
+      </PanelSectionRow>
+      <PanelSectionRow>
+        <ButtonItem
+          layout="below"
+          onClick={handleAWACYSearch}
+        >
+          {mainRunningApp ? `Search AWACY for ${mainRunningApp.display_name}` : "Open Are We Anti-Cheat Yet"}
         </ButtonItem>
       </PanelSectionRow>
       {/* {mainRunningApp && (
